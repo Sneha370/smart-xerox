@@ -12,7 +12,56 @@ const upload = multer({ dest: "uploads/" });
 
 // TEST ROUTE
 app.get("/", (req, res) => {
-    res.send("Server is running");
+    res.send(`
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Xerox</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.box{
+    background:#111827;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:360px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+h1{color:#38bdf8;}
+a{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px;
+    width:100%;
+    background:#38bdf8;
+    color:black;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+a:hover{background:#0ea5e9;}
+</style>
+</head>
+
+<body>
+<div class="box">
+<h1>🖨 Smart Xerox</h1>
+<p>PDF Upload & Price Calculator</p>
+
+<a href="/upload">Go to Upload Page</a>
+</div>
+</body>
+</html>
+`);
 });
 
 // SIMPLE UPLOAD PAGE (browser open panna)
